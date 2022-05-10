@@ -1,0 +1,60 @@
+<!-- <div class="content">
+    <H1>bienvenido</H1>
+    <div class="registrar">
+        <h2>Registrar</h2>
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input formControlName="nombre" type="text" class="form-control" id="inputEmail4" placeholder="nombre">
+                </div>
+                <div class="form-group col-md-6">
+                    <input formControlName="cedula" type="number" class="form-control" id="inputPassword4" placeholder="cedula">
+                </div>
+            </div>
+            <div class="form-group">
+                <input formControlName="telefono" type="number" class="form-control" id="inputAddress" placeholder="telefono">
+            </div>
+            <div class="form-group">
+                <input formControlName="genero" type="text" class="form-control" id="inputAddress" placeholder="genero">
+            </div>
+            <div class="form-group">
+                <input formControlName="cliente" type="text" class="form-control" id="inputAddress" placeholder="cliente">
+            </div>
+            <div class="form-group">
+                <input formControlName="sede" type="text" class="form-control" id="inputAddress" placeholder="sede">
+            </div>
+            <div class="form-group">
+                <input formControlName="fech_naci" type="text" class="form-control" id="inputAddress2" placeholder="Fechas de nacimiento">
+            </div>
+            <button type="submit" (click)="registrar()" class="btn btn-primary">registrar</button>
+        </form>
+    </div>
+</div> -->
+<div class="container p-4">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card card-body">
+        <img width="180" alt="Angular Logo" src="https://images.vexels.com/media/users/3/154332/isolated/preview/079ffb98258a5cd58bc5f57438ce701d-icono-de-trazo-de-clima-en-la-nube.png" class="mx-auto">
+          <form (submit)="submitLocation(cityName, cityCode)">
+            <input type="text" placeholder="Nombre de la ciudad" class="form-control" autofocus #cityName>
+            <input type="text" placeholder="Codigo de la ciudad" class="form-control" #cityCode>
+            <button class="btn btn-primary btn-block mt-2">
+              Get Weather
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div *ngIf="weather" class="card card-body text-center">
+          <h1 class="h4">Información meteorológica</h1>
+          <p>Ciudad: {{weather.name}}</p>
+          <p>Latitud: {{weather.coord.lat}}</p>
+          <p>Longitud: {{weather.coord.lon}}</p>
+          <p>Humedad: {{weather.main.humidity}}</p>
+          <p>Presión: {{weather.main.pressure}}</p>
+          <p>Temperatura: {{weather.main.temp}} °C</p>
+          <p>Descripción: {{weather.weather[0].description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
